@@ -32,7 +32,6 @@ trait Likable
             'user' => $user ? $user->name : auth()->user()->name,
             'user_path' => $user ? $user->path(): auth()->user()->path(),
             'user_avatar' => $user ? $user->avatar : auth()->user()->avatar,
-
         ]));
     }
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\PostLikesController;
 use App\Http\Controllers\UserNotificationsController;
+use App\Http\Controllers\PostCommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::middleware('auth')->group( function() {
 
     Route::post('/post/{post}/like', [PostLikesController::class, 'store']);
     Route::delete('/post/{post}/like', [PostLikesController::class, 'destroy']);
+    
+    Route::post('/post/{post}/comment', [PostCommentsController::class, 'store']);
+    Route::delete('/post/{post}/comment', [PostCommentsController::class, 'destroy']);
 
 
     Route::get('/notifications', [UserNotificationsController::class, 'index'])->name('notifications');    

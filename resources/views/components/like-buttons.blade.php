@@ -16,7 +16,7 @@
     </form>
 
     
-    <form method="POST" action="/post/{{ $post->id }}/like">
+    <form method="POST" action="/post/{{ $post->id }}/comment">
         @csrf
         @method('DELETE')
         <button class="flex items-center {{  $post->isDislikedBy(current_user()) ? 'text-blue-500' : 'text-gray-500' }}">

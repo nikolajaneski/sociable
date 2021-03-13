@@ -15,4 +15,17 @@ class Post extends Model
     public function user() {
         return $this->belongsTo(User::class);
     }
+
+    public function comments() {
+        return $this->hasMany(Comment::class)->oldest();
+    }
+
+    public function commented($user = null, $attr) {
+        return $this->comments()->create([
+            'user_id' => $user ? $user->id : auth()->id(),
+            'post_id' => $this->id,
+            'body' => $attr['body']
+        ]); 
+    }
+
 }
