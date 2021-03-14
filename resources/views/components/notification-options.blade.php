@@ -12,9 +12,9 @@
         <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
             {{-- @if ($post->user->id == current_user()->id) --}}
                 {{-- <form method="POST" action="/post/{{ $post->id }}"> --}}
-                    @csrf
+                    {{-- @csrf
                     @method('DELETE')
-                    <button type="submit" class="pl-2 pr-32 py-2 text-sm text-gray-700" role="menuitem">Delete</button>
+                    <button type="submit" class="pl-2 pr-32 py-2 text-sm text-gray-700" role="menuitem">Delete</button> --}}
                 {{-- </form> --}}
             {{-- @endif --}}
             <button class="pl-2 pr-32 py-2 text-sm text-gray-700" role="menuitem">Report</button>

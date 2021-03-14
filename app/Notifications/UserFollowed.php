@@ -7,11 +7,12 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class PostLiked extends Notification
+class UserFollowed extends Notification
 {
     use Queueable;
 
     protected $notificationData;
+
     /**
      * Create a new notification instance.
      *
@@ -56,8 +57,7 @@ class PostLiked extends Notification
     public function toArray($notifiable)
     {
         return [
-            'post_id' => $this->notificationData['post'],
-            'liked' => $this->notificationData['liked'],
+            'follow' => $this->notificationData['follow'],
             'user_name' => $this->notificationData['user'],
             // this should be improved
             'user_path' => $this->notificationData['user_path'],

@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\User;
+use App\Notifications\UserFollowed;
 
 trait Followable
 {
@@ -22,9 +23,23 @@ trait Followable
 
     public function toggleFollow(User $user)
     {
-        if($this->following($user)) {
-            return $this->unfollow($user);
+        if($this->following($user)) { 
+            $user->notify(new UserFollowed([
+                'follow' => false,
+                'user' => $this->name,
+                'user_path' => $this->path(),
+                'user_avatar' => $this->avatar,
+            ]));
+
+            return $this->unfollow($user); 
         }
+        
+        $user->notify(new UserFollowed([
+            'follow' => true,
+            'user' => $this->name,
+            'user_path' => $this->path(),
+            'user_avatar' => $this->avatar,
+        ]));
 
         return $this->follow($user);
     }

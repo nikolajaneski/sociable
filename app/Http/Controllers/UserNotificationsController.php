@@ -11,7 +11,8 @@ class UserNotificationsController extends Controller
         // dd(auth()->user()->notifications);
 
         return view('notifications.index', [
-            'notifications' => auth()->user()->notifications
+            'unreadNotifications' => auth()->user()->unreadNotifications,
+            'readNotifications' => auth()->user()->readNotifications
         ]);
     }
 }
