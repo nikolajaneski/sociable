@@ -1,6 +1,6 @@
 <x-app> 
 
-    <header class="mb-6 relative">
+    <header class="mb-4 relative">
         <div class="relative">
             <img 
                 src="{{ $user->cover }}" 
@@ -38,11 +38,18 @@
         </div>
 
             
-        <p class="text-sm">
+        <p class="text-sm mb-4">
             {{ $user->description }}
         </p>
 
+        <div class="flex justify-start">
+            <p class="text-xs mr-2"><span class="font-bold">{{ $user->follows->count() }}</span> following</p>
+            <p class="text-xs"><span class="font-bold">{{ $user->followers->count() }}</span> followers</p>
+        </div>
+
     </header>
+
+    @include('_post-panel')
 
     @include('_timeline', [
         'posts' => $user->posts
