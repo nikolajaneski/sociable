@@ -1,15 +1,15 @@
 <ul>
     <li><a 
-        class="font-bold text-lg mb-4 block"
+        class="font-bold text-lg mb-4 block {{ request()->is('posts') ? 'text-blue-500' : '' }}"
         href="{{ route('posts') }}"
     >Home</a></li>
     <li><a 
-        class="font-bold text-lg mb-4 block"
+        class="font-bold text-lg mb-4 block  {{ request()->is('explore') ? 'text-blue-500' : '' }}"
         href="{{ route('explore') }}"
     >Explore</a></li>
     <li>
         <a 
-            class="flex font-bold text-lg mb-4 "
+            class="flex font-bold text-lg mb-4 {{ request()->is('notifications') ? 'text-blue-500' : '' }}"
             href="{{ route('notifications') }}"
         >
             Notifications 
@@ -24,7 +24,7 @@
     </li>
 
     <li><a 
-        class="font-bold text-lg mb-4 block"
+        class="font-bold text-lg mb-4 block {{ request()->routeIs('profile') ? 'text-blue-500' : '' }}"
         href="{{ current_user()->path() }}"
     >Profile</a></li>
     <li>

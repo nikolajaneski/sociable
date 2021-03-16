@@ -13,8 +13,9 @@
                 </div>
                 
                 @auth
-                    <div class="lg:w-1/6">
-                        @include('_friends-list')
+                    <div class="lg:w-1/5">
+                        {{-- @include('_friends-list') --}}
+                        @include('_suggestions')
                     </div>
                 @endauth
             </div>

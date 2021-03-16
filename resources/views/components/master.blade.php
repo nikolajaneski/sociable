@@ -18,22 +18,24 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-white">
-            <section class="px-8 py-4 mb-6">
-                <header class="flex justify-between container mx-auto">
-                    <img src="/images/new-logo.jpg" alt="NikolaJaneski">
-
-                    @auth
-                        <form action="{{ route('search') }}" method="POST">
-                            @csrf
-                            <div class="flex justify-between">
-                                <x-input id="name" class="block mr-2 w-full" type="text" name="name" value="" required />
-                                    <x-button class="bg-blue-400 hover:bg-blue-500 text-white shadow">
-                                        {{ __('Search') }}
-                                    </x-button>
-                            </div>
-                        </form>
-                    @endauth
-                </header>
+            <section class="px-8 py-4 mb-8">
+                <div class="bg-white py-2 fixed w-full z-10 top-0">
+                    <header class="flex justify-between container mx-auto">
+                        <img style="height: 40px;" src="/images/new-logo.jpg" alt="NikolaJaneski">
+    
+                        @auth
+                            <form action="{{ route('search') }}" method="POST">
+                                @csrf
+                                <div class="flex justify-between">
+                                    <x-input id="name" class="block mr-2 w-full" type="text" name="name" value="" required />
+                                        <x-button class="bg-blue-400 hover:bg-blue-500 text-white shadow">
+                                            {{ __('Search') }}
+                                        </x-button>
+                                </div>
+                            </form>
+                        @endauth
+                    </header>
+                </div>
             </section>
 
             <!-- Page Content -->

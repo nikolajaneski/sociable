@@ -17,7 +17,7 @@
         </div>
 
 
-        <div class="flex justify-between items-center mt-2 mb-6">
+        <div class="flex justify-between items-center mt-2 mb-4">
             <div>
                 <h2 class="font-bold text-2xl">{{ $user->name }}</h2>
                 <p class="text-sm">Joined {{ $user->created_at->diffForHumans() }}</p>
