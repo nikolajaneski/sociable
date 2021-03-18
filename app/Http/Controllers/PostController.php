@@ -13,9 +13,11 @@ class PostController extends Controller
         ]);
     }
 
-    public function show() {
+    public function show($id) {
         return view('posts.index', [
-            'posts' => auth()->user()->post()
+            'posts' => Post::where('id', $id)
+                            ->withLikes()
+                            ->get()
         ]);
     }
     
