@@ -41,7 +41,8 @@ trait Likable
 
     public function unlike($user = null) {
         return $this->likes()
-                    ->delete($user ? $user->id : auth()->id());
+                    ->where('user_id', $user ? $user->id : auth()->id())
+                    ->delete();
     }
 
     public function isLikedBy(User $user) {

@@ -9,6 +9,7 @@ use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\PostLikesController;
 use App\Http\Controllers\UserNotificationsController;
 use App\Http\Controllers\PostCommentsController;
+use App\Http\Controllers\ReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::middleware('auth')->group( function() {
 
     Route::get('/notifications', [UserNotificationsController::class, 'index'])->name('notifications');    
 
+    Route::post('/report/{post}', ReportController::class);
 });
 
 Route::get('/profiles/{user:username}', [ProfileController::class, 'show'])->name('profile');

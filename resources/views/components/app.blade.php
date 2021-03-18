@@ -14,8 +14,12 @@
                 
                 @auth
                     <div class="lg:w-1/5">
-                        {{-- @include('_friends-list') --}}
-                        @include('_suggestions')
+                        @if (request()->routeIs('profile') && request()->user->id === auth()->user()->id)
+                            @include('_friends-list')
+                        @else 
+                            @include('_suggestions')
+                        @endif
+                        
                     </div>
                 @endauth
             </div>

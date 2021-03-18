@@ -47,8 +47,10 @@ class User extends Authenticatable
     ];
 
     public function getAvatarAttribute($value) {
-        // return asset($value ? 'storage/'.$value : '/images/default-avatar.png');
-        return asset($value ? 'storage/'.$value : "https://i.pravatar.cc/150?u=" . $this->email);
+        return asset($value ? 'storage/'.$value : '/images/default-avatar.png');
+        
+        // uncoment bellow for better demo
+        // return asset($value ? 'storage/'.$value : "https://i.pravatar.cc/150?u=" . $this->email);
     }
 
     public function getCoverAttribute($value) {

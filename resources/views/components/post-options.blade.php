@@ -17,7 +17,10 @@
                     <button type="submit" class="pl-2 pr-32 py-2 text-sm text-gray-700" role="menuitem">Delete</button>
                 </form>
             @endif
-            <button class="pl-2 pr-32 py-2 text-sm text-gray-700" role="menuitem">Report</button>
+            <form method="POST" action="/report/{{ $post->id }}">
+                @csrf
+                <button class="pl-2 pr-32 py-2 text-sm text-gray-700" role="menuitem">Report</button>
+            </form>
         </div>
     </div>
 </div>    

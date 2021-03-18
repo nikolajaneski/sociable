@@ -24,9 +24,9 @@
     </li>
 
     <li><a 
-        class="font-bold text-lg mb-4 block {{ request()->routeIs('profile') ? 'text-blue-500' : '' }}"
+        class="font-bold text-lg mb-4 block {{ request()->routeIs('profile') && request()->user->id === auth()->user()->id ? 'text-blue-500' : '' }}"
         href="{{ current_user()->path() }}"
-    >Profile</a></li>
+    >My profile</a></li>
     <li>
         <form method="POST" action="{{ route('logout') }}">
             @csrf
