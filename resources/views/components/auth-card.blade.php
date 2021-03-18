@@ -1,9 +1,9 @@
-<div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0 bg-gray-100">
-    <div>
-        {{ $logo }}
+<div class="lg:flex items-center mt-24 ml-32">
+    <div class="lg:flex-1 lg:mx-10" style="max-width: 700px">
+        {{ $left }}
     </div>
-
-    <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
-        {{ $slot }}
+        
+    <div class="lg:flex-2 lg:mx-10">
+        {{ $right }}
     </div>
 </div>

@@ -22,15 +22,15 @@ use App\Http\Controllers\ReportController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [PostController::class, 'index'])->name('posts');
 Route::middleware('auth')->group( function() {
     Route::post('/post', [PostController::class, 'store']);
     Route::get('/post/{post}', [PostController::class, 'show']);
     Route::delete('/post/{post}', [PostController::class, 'destroy']);
-    Route::get('/posts', [PostController::class, 'index'])->name('posts');
+    // Route::get('/', [PostController::class, 'index'])->name('posts');
     
     Route::get('/profiles/{user:username}/follow', [FollowsController::class, 'store']);
     Route::get('/profiles/{user:username}/edit', [ProfileController::class, 'edit'])

@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Auth;
 
 class PostController extends Controller
 {
     public function index() {
-        return view('posts.index', [
-            'posts' => auth()->user()->timeline()
-        ]);
+        if(Auth::user())
+            return view('posts.index', [
+                'posts' => auth()->user()->timeline()
+            ]);
+        else 
+            return view('auth.login');
     }
 
     public function show($id) {
