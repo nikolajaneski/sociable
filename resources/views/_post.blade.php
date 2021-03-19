@@ -1,4 +1,4 @@
-<div class="p-4 {{ $loop->last ? '' : 'border-b border-gray-200' }}">
+<div class="bg-white p-4 border rounded-lg border-gray-300 mb-2">
     <div class="flex justify-between mb-2">
         <div class="flex">
             <div class="mr-2 flex-shrink-0">

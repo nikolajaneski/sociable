@@ -1,4 +1,4 @@
-<div class="border border-gray-300 rounded-lg">
+<div>
     @forelse ($posts as $post)
         @include('_post')
     @empty

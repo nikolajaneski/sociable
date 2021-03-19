@@ -1,4 +1,4 @@
-<div class="border border-blue-400 rounded-lg px-8 py-4 mb-4">
+<div class="bg-white border border-blue-400 rounded-lg px-8 py-4 mb-4">
     <form method="POST" action="/post">
         @csrf
         <textarea 
