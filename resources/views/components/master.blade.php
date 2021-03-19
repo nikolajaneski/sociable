@@ -19,22 +19,34 @@
     <body class="font-sans antialiased bg-gray-100">
         <div class="min-h-screen bg-gray-100">
             @if (Auth::user())
-                <section class="8 py-4 mb-8">
-                    <div class="bg-white py-2 fixed w-full z-10 top-0">
+                <section class="8 py-4 mb-10">
+                    <div class="bg-white py-2 fixed w-full z-10 top-0 shadow-md">
                         <header class="flex justify-between container mx-auto">
-                            <img style="height: 40px;" src="/images/new-logo.jpg" alt="NikolaJaneski">
-        
-                            @auth
-                                <form action="{{ route('search') }}" method="POST">
-                                    @csrf
-                                    <div class="flex justify-between">
-                                        <x-input id="name" class="block mr-2 w-full" type="text" name="name" value="" required />
-                                            <x-button class="bg-blue-400 hover:bg-blue-500 text-white shadow">
-                                                {{ __('Search') }}
-                                            </x-button>
-                                    </div>
-                                </form>
-                            @endauth
+                            <div class="flex">
+                                <img style="height: 40px;" class="mr-2" src="/images/new-logo.jpg" alt="NikolaJaneski">
+            
+                                @auth
+                                    <form action="{{ route('search') }}" method="POST">
+                                        @csrf
+                                        <div class="flex justify-between">
+                                            <x-input id="name" class="rounded-lg block mr-2 w-full" type="text" name="name" placeholder="Search friends" required />
+                                        </div>
+                                    </form>
+                                @endauth
+                            </div>
+                            <div class="flex items-center">
+                                <div>
+                                    <h4 class="mr-2 text-gray-700 font-bold">{{ current_user()->name }}</h4>
+                                    <h4 class="mr-2 text-gray-500 text-sm"> {{ '@'.current_user()->username }}</h4>
+                                </div>
+                                <img 
+                                    src="{{ current_user()->avatar }}" 
+                                    alt=""
+                                    class="rounded-full mr-2"
+                                    width="40"
+                                    height="40"
+                                >
+                            </div>
                         </header>
                     </div>
                 </section>                
