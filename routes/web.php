@@ -45,7 +45,7 @@ Route::middleware('auth')->group( function() {
     Route::delete('/post/{post}/like', [PostLikesController::class, 'destroy']);
     
     Route::post('/post/{post}/comment', [PostCommentsController::class, 'store']);
-    // Route::delete('/post/{post}/comment', [PostCommentsController::class, 'destroy']);
+    Route::delete('/post/{post}/comment/{comment}', [PostCommentsController::class, 'destroy']);
 
 
     Route::get('/notifications', [UserNotificationsController::class, 'index'])->name('notifications');    

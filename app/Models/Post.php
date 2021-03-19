@@ -37,4 +37,9 @@ class Post extends Model
         ]); 
     }
 
+    public function deleteComment($id) {
+        return $this->comments()
+                    ->where('id', $id)
+                    ->delete();
+    }
 }

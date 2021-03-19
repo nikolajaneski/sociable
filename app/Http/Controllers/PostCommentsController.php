@@ -13,9 +13,14 @@ class PostCommentsController extends Controller
             'body' => 'required|max:255'
         ]);
 
-
         $post->commented(current_user(), $attr);
 
+        return back();
+    }
+
+    public function destroy(Post $post, $id) {
+        $post->deleteComment($id);
+        
         return back();
     }
 }

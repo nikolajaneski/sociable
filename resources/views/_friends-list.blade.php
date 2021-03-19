@@ -21,7 +21,7 @@
                 </div>
             </li>     
         @empty
-            <p>No friends yet.</p>
+            <p class="mb-4">Not following anyone yet.</p>
         @endforelse
     </ul>
 </div>

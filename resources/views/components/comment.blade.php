@@ -11,12 +11,17 @@
         </a>
     </div>
 
-    <div class="bg-gray-50 p-1 pl-2 border rounded-lg border-gray-300 mb-2 text-sm" style="width: 528px"> 
-        <a href="{{ $comment->user->path() }}">
-            <h5 class="font-bold">{{ $comment->user->name }}</h5>
-        </a>
-        <p>
-            {{ $comment->body }}
-        </p>
+    <div class="items-center flex">
+
+        <div class="bg-gray-50 p-1 pl-2 border rounded-lg border-gray-300 mb-2 text-sm" style="width: 528px"> 
+            <a class="w-auto" href="{{ $comment->user->path() }}">
+                <h5 class="font-bold">{{ $comment->user->name }}</h5>
+            </a>
+            <p>
+                {{ $comment->body }}
+            </p>
+        </div>
+
+        <x-comment-options :comment="$comment"/>
     </div>
 </div>
