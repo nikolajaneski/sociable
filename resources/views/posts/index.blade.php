@@ -1,5 +1,5 @@
 <x-app> 
-    @include('_post-panel')
-                            
-    @include('_timeline')
+    <x-post-panel />
+                           
+    <x-timeline :posts="$posts" />
 </x-app>

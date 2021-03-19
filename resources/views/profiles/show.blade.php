@@ -50,9 +50,7 @@
 
     </header>
 
-    @include('_post-panel')
+    <x-post-panel />
 
-    @include('_timeline', [
-        'posts' => $user->posts
-    ])
+    <x-timeline :posts="$user->posts" />
 </x-app>

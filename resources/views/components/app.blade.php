@@ -4,7 +4,7 @@
             <div class="lg:flex lg:justify-between">
                 @auth
                     <div class="lg:w-52">
-                        @include('_sidebar-links')
+                        <x-sidebar-links />
                     </div>
                 @endauth
 
@@ -15,11 +15,10 @@
                 @auth
                     <div class="lg:w-1/5">
                         @if (request()->routeIs('profile') && request()->user->id === auth()->user()->id)
-                            @include('_friends-list')
+                            <x-following-list />
                         @else 
-                            @include('_suggestions')
+                            <x-popular />
                         @endif
-                        
                     </div>
                 @endauth
             </div>
